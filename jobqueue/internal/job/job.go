@@ -8,8 +8,9 @@ const (
 
 // Job은 작업 하나의 정보를 담는 상자 (DTO 역할)
 // 필드 이름이 대문자로 시작해야 다른 패키지(api)에서 읽을 수 있음
+// `json:"id"` 같은 꼬리표(태그): JSON으로 바꿀 때 쓸 이름 (없으면 "ID"처럼 대문자로 나감)
 type Job struct {
-	ID     string // 작업 번호 (예: "1")
-	Task   string // 무슨 작업인지 (예: "send-email")
-	Status string // 현재 상태 (StatusPending 또는 StatusDone)
+	ID     string `json:"id"`     // 작업 번호 (예: "1")
+	Task   string `json:"task"`   // 무슨 작업인지 (예: "send-email")
+	Status string `json:"status"` // 현재 상태 (StatusPending 또는 StatusDone)
 }
